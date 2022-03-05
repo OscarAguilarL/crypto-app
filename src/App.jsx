@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { Formulario } from './components/Formulario';
 import imgCrypto from './img/imagen-criptos.png';
+import { Resultado } from './components/Resultado';
 
 const Container = styled.div`
   max-width: 900px;
@@ -65,6 +66,7 @@ function App() {
       <div>
         <Heading>Cotiza Criptomonedas al Instante</Heading>
         <Formulario setMonedas={setMonedas} />
+        {!!resultado.PRICE && <Resultado resultado={resultado} />}
       </div>
     </Container>
   );
